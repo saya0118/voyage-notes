@@ -1,1 +1,1 @@
-<img src="/src/img/voyage-banner.png">
+<img src="/image/voyage-banner.png">
