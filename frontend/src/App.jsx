@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
-import Header from './components/Header/Header';
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const [image, setImage] = useState([]);
@@ -18,15 +19,16 @@ function App() {
   }, []);
 
   return (
-    <div className="">
+    <div className="max-h-screen">
       <div className="relative">
-        <Header/>
+        <Header />
         <MainPage />
         <img
           src={image?.urls?.full}
           alt="unsplash images"
-          className="z-0 grayscale-70 w-screen max-h-screen overflow-hidden object-cover relative"
+          className="z-0 grayscale-70 w-screen h-lg overflow-hidden object-cover relative"
         />
+        <Footer />
       </div>
     </div>
   );
