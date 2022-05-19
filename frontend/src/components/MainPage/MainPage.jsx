@@ -1,14 +1,20 @@
 import MapBox from "../Map/Map";
+import CountryList from "../CountryList/CountryList";
 
 function MainPage() {
   return (
-    <div className="mx-48 z-10 absolute">
-      <div className="text-center">
-        <div className="my-12">
-          <MapBox />
+    <div className="z-10 absolute mx-40">
+      <div className="flex">
+        <div className="text-center">
+          <div className="my-12">
+            <h1 className="text-lg font-bold text-black">
+              You've been countries.
+            </h1>
+            <MapBox />
+          </div>
         </div>
         <div className="my-12">
-          <h1>You've been 10 countries.</h1>
+          <CountryList />
         </div>
       </div>
     </div>
