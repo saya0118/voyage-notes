@@ -3,8 +3,10 @@ import axios from "axios";
 import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import CountryList from "../CountryList/CountryList";
 
-function App() {
+const Diary = () => {
   const [image, setImage] = useState([]);
   const api = process.env.REACT_APP_ACCESS_KEY;
   const url = `https://api.unsplash.com/search/photos?query=sea&client_id=${api}`;
@@ -18,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <div className="">
+    <div className="max-h-screen">
       <div className="relative">
         <Header />
         <MainPage />
@@ -27,9 +29,10 @@ function App() {
           alt="unsplash images"
           className="z-0 grayscale-70 w-screen h-lg overflow-hidden object-cover relative"
         />
+        <Footer />
       </div>
     </div>
   );
 }
 
-export default App;
+export default Diary;
