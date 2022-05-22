@@ -2,15 +2,16 @@ import React, { useState, createContext } from "react";
 import MainPage from "./components/MainPage/MainPage";
 import Header from "./components/Header/Header";
 
+export const DiaryItemStatusContext = React.createContext();
+
 const App = () => {
-  const PageToggleStatusContext = createContext();
-  const [diary, setDiary] = useState(false);
+  const [diaryItems, setDiaryItems] = useState([]);
   return (
     <div>
-      <PageToggleStatusContext.Provider value={{ diary, setDiary }}>
+      <DiaryItemStatusContext.Provider value={{ diaryItems, setDiaryItems }}>
         <Header />
         <MainPage />
-      </PageToggleStatusContext.Provider>
+      </DiaryItemStatusContext.Provider>
     </div>
   );
 };

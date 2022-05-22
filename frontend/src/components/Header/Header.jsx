@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import Button from "../Button/Button";
+import { DiaryItemStatusContext } from "../../App";
 
-function Header() {
-  const diary = useContext(PageToggleStatusContext);
+const Header = () => {
+  const { diaryItems, setDiaryItems } = useContext(DiaryItemStatusContext);
   return (
     <div className="mx-40">
       <div className="flex justify-between w-full content-center h-16 items-center">
@@ -14,17 +15,18 @@ function Header() {
       </div>
       <div className="flex w-48 justify-between content-center h-16">
         <button
-          // onClick={!diary}
           className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t"
         >
           Map
         </button>
-        <button className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t">
+        <button
+          className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t"
+        >
           Diary
         </button>
       </div>
     </div>
   );
-}
+};
 
 export default Header;

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import MapBox from "../MapBox/MapBox";
 import axios from "axios";
 
-function MainPage() {
+const MapPage = () => {
   const [image, setImage] = useState([]);
   const api = process.env.REACT_APP_ACCESS_KEY;
   const url = `https://api.unsplash.com/search/photos?query=sea&client_id=${api}`;
@@ -31,4 +31,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default MapPage;
