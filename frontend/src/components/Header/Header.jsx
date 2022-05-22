@@ -1,6 +1,8 @@
+import { useContext } from "react";
 import Button from "../Button/Button";
 
 function Header() {
+  const diary = useContext(PageToggleStatusContext);
   return (
     <div className="mx-40">
       <div className="flex justify-between w-full content-center h-16 items-center">
@@ -11,7 +13,10 @@ function Header() {
         </div>
       </div>
       <div className="flex w-48 justify-between content-center h-16">
-        <button className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t">
+        <button
+          // onClick={!diary}
+          className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t"
+        >
           Map
         </button>
         <button className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t">
