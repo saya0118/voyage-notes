@@ -12,7 +12,7 @@ function MapBox() {
           zoom: 1,
         }}
         mapboxAccessToken={process.env.REACT_APP_MAP_ACCESS_TOKEN}
-        style={{ width: 800, height: 600}}
+        style={{ width: 800, height: 500}}
         mapStyle="mapbox://styles/sayaka0118/cl30zljwc005i15ld8h5f2d9k"
       >
         <Marker longitude={139.839478} latitude={35.652832} anchor="bottom">

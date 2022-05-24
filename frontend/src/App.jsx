@@ -1,18 +1,17 @@
-import React, { useState, Router } from "react";
-import MainPage from "./components/MainPage/MainPage";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-
-export const DiaryItemStatusContext = React.createContext();
+import Diary from "./components/Diary/Diary";
+import MainPage from "./components/MainPage/MainPage";
 
 const App = () => {
-  const [diaryItems, setDiaryItems] = useState([]);
   return (
-    <div>
-      <DiaryItemStatusContext.Provider value={{ diaryItems, setDiaryItems }}>
-        <Header />
-        <MainPage />
-      </DiaryItemStatusContext.Provider>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/diary" element={<Diary />} />
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </>
   );
 };
 

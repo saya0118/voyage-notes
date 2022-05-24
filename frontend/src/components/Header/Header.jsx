@@ -1,9 +1,15 @@
-import React, { useContext } from "react";
 import Button from "../Button/Button";
-import { DiaryItemStatusContext } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
-  const { diaryItems, setDiaryItems } = useContext(DiaryItemStatusContext);
+  const navigate = useNavigate();
+
+  const navigateToDiary = () => {
+    navigate("/diary", {replace: true});
+  };
+  const navigateToHome = () => {
+    navigate("/");
+  };
   return (
     <div className="mx-40">
       <div className="flex justify-between w-full content-center h-16 items-center">
@@ -16,11 +22,13 @@ const Header = () => {
       <div className="flex w-48 justify-between content-center h-16">
         <button
           className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t"
+          onClick={navigateToHome}
         >
           Map
         </button>
         <button
           className="py-1 mb-0 mt-auto text-md hover:bg-secondary bg-primary font-bold text-white w-20 h-8 rounded-t"
+          onClick={navigateToDiary}
         >
           Diary
         </button>
