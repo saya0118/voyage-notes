@@ -4,7 +4,7 @@ import RoomIcon from "@mui/icons-material/Room";
 
 function MapBox() {
   return (
-    <div className="">
+    <div>
       <MapGL
         initialViewState={{
           longitude: 0,
