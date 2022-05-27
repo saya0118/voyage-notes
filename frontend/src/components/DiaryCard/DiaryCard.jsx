@@ -8,4 +8,4 @@ const DiaryCard = () => {
   );
 };
 
-export default DiaryCard
+export default DiaryCard;
