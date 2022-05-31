@@ -1,7 +1,23 @@
-import { configureStore, combineReducers } from "redux";
 
-const rootReducers = combineReducers({
-  diaryCardsList: listReducer,
-});
+export const listReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "LIST_ADDED":
+      const newItem = {
+        id: state.length,
+        country: action.payload,
+      };
+      return [...state, newItem];
 
-export const store = configureStore(rootReducers);
+    case "LIST_DELETED":
+      state.splice(action.payload, 1);
+      return [...state];
+
+    case "LIST_EDITED":
+      const copiedState = [...state];
+      copiedState[action.payload.index].country = action.payload.value;
+      return copiedState;
+
+    default:
+      return state;
+  }
+};
