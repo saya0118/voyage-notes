@@ -14,7 +14,7 @@ export const listReducer = (state = initialState, action) => {
 
     case "LIST_EDITED":
       const copiedState = [...state];
-      copiedState[action.payload.index].country = action.payload.value;
+      copiedState[action.payload.index].list = action.payload.value;
       return copiedState;
 
     default:
