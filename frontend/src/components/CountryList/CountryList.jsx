@@ -7,6 +7,7 @@ const CountryList = () => {
   const options = useMemo(() => countryList().getData(), []);
   const changeHandler = (value) => {
     setValue(value);
+    console.log(value.label)
   };
 
   return (
